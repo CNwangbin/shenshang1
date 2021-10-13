@@ -23,7 +23,7 @@ import sys
 sys.path.insert(0, os.path.abspath('..'))
 
 import shenshang
-
+autodoc_mock_imports = ["numpy"]
 # -- General configuration ---------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
