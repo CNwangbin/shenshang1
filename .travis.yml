@@ -1,0 +1,18 @@
+language: python
+python:
+- 3.6
+- 3.5
+install: pip install -U tox-travis
+script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: zhenjiang.xu
+  password:
+    secure: hiSE8BbCRuaD1/hE+9DfGZ8lNWncuyIIx5PdAfNqd56w31SuXIVOL70rUPHNfMRUeSacjtJ1A77W+FEnEEV3qPWJucQ3uCe0jw4m6vUAt3wGnyeYLOmf2xUlyA/Koj1Ul0VDG0r+9wEPW8TEyKXpZN40azBsdV0d8oWQfSNPR4EiQzIS4uqZonWp2o2Ac5Eim+paOkVeGn7TpH9m76RWysX8GRQ/PXX6WGa6kZHRYXTf05d0rHOPE2m9LSWkoH9BTcZ9yRek4nhlgc/NgAVf8xO7N0Da/FWDCHSBnN7YPRStuoc5S5Cx8Ix4f9rvq1GC6BwM7HFDK7Q+snXeTneR8pjO7+chTm6TecSfDfKNbmjXvNZ1jQ5JGVARXq1sQ9ToQRDMFH7IAEIVn4t9r2uYdibyZ1vZrlW19/f94ozklClPFQzOhsaxAm5fZY1KsbpLMzZLOCh5X03bXl8Oz2uO4FYoJtxSi3jElPuKdCHl24H67pWifHCcBpekE8hSqGSfK/gwdvdrXKkh5MbCAJ6GIY/IEzdjwtDkE0JIwActk0VnbMq3D6gXljBieIXOpwRBAeBovAE3g5PaxcAyhQWg7jbb8AugyVQpwSWAsDd7qMJJ8Yvd/rSJdY5Z5XGMW89yUBzOlKZn5NfBQCNpSaQH3rqOJ/LrH0PxfF9zxiwPlsY=
+  on:
+    tags: true
+    repo: RNAer/shenshang
+    python: 3.6
+notifications:
+  email: false
