@@ -24,12 +24,12 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 
-import mock
-
-MOCK_MODULES = ['numpy', 'scipy', 'matplotlib', 'matplotlib.pyplot', 'pandas.core.algorithms','joblib','click',
-                'scipy.interpolate','scipy.stats','scipy.sparse','pandas','pandas.core']
-for mod_name in MOCK_MODULES:
-    sys.modules[mod_name] = mock.Mock()
+# import mock
+#
+# MOCK_MODULES = ['numpy', 'scipy', 'matplotlib', 'matplotlib.pyplot', 'pandas.core.algorithms','joblib','click',
+#                 'scipy.interpolate','scipy.stats','scipy.sparse','pandas','pandas.core']
+# for mod_name in MOCK_MODULES:
+#     sys.modules[mod_name] = mock.Mock()
 
 import shenshang
 # -- General configuration ---------------------------------------------
