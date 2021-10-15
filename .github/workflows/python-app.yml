@@ -3,6 +3,8 @@
 
 name: Python application
 
+# Triggers the workflow on push or pull request events
+# but only for the master branch
 on:
   push:
     branches: [ master ]
@@ -11,12 +13,15 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    runs-on: ${{matrix.os}}
+    strategy:
+     matrix:
+         os:[macos-latest,ubuntu-latest]
     steps:
+    # This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
+      # This action sets up a Python environment.
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
