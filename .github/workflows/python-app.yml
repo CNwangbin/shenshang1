@@ -1,5 +1,6 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+CODECOV_TOKEN='3ab91b13-2794-4a49-8c77-268566996f1d'
 
 name: Python application
 
