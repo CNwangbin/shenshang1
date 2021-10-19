@@ -1,4 +1,4 @@
-.PHONY: clean clean-test clean-pyc clean-build docs help test
+.PHONY: clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -46,25 +46,24 @@ clean-pyc: ## remove Python file artifacts
 
 clean-test: ## remove test and coverage artifacts
 	rm -fr .tox/
-	rm -fr report_html/
+	rm -f .coverage
+	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
 	flake8 shenshang tests
 
-test: ## run tests quickly with the python3 and generate report in /report_html/test/test_report.html
+test: ## run tests quickly with the default Python
 	py.test -v
 
 test-all: ## run tests on every Python version with tox
 	tox
 
-TESTS=tests/test_cli.py tests/test_cooccur.py tests/test_simulate.py tests/test_util.py tests/test_visualize.py
-coverage: ## check code coverage quickly with the python3 and generate report in /report_html/test/index.html
-	python -m coverage run $(TESTS)
-	python -m coverage report -m
-	python -m coverage xml
-	python -m coverage html -d ./report_html/coverage
-	$(BROWSER) ./report_html/coverage/index.html
+coverage: ## check code coverage quickly with the default Python
+	coverage run --source shenshang -m pytest
+	coverage report -m
+	coverage html
+	$(BROWSER) htmlcov/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/shenshang.rst
