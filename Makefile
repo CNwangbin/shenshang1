@@ -53,16 +53,18 @@ lint: ## check style with flake8
 	flake8 shenshang tests
 
 test: ## run tests quickly with the python3 and generate report in /report_html/test/test_report.html
-	python3 -m pytest tests --html=./report_html/test/test_report.html --capture=sys
+	python -m pytest tests --html=./report_html/test/test_report.html --capture=sys
 	$(BROWSER) ./report_html/test/test_report.html
 
 test-all: ## run tests on every Python version with tox
 	tox
 
-coverage: tests/test_cli.py tests/test_cooccur.py tests/test_simulate.py tests/test_util.py tests/test_visualize.py## check code coverage quickly with the python3 and generate report in /report_html/test/index.html
-	python3 -m coverage run tests/test_cli.py
-	python3 -m coverage report -m
-	python3 -m coverage html -d ./report_html/coverage
+TESTS=tests/test_cli.py tests/test_cooccur.py tests/test_simulate.py tests/test_util.py tests/test_visualize.py
+coverage: ## check code coverage quickly with the python3 and generate report in /report_html/test/index.html
+	python -m coverage run $(TESTS)
+	python -m coverage report -m
+	python -m coverage xml
+	python -m coverage html -d ./report_html/coverage
 	$(BROWSER) ./report_html/coverage/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
