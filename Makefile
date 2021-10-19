@@ -53,8 +53,7 @@ lint: ## check style with flake8
 	flake8 shenshang tests
 
 test: ## run tests quickly with the python3 and generate report in /report_html/test/test_report.html
-	python -m pytest tests --html=./report_html/test/test_report.html --capture=sys
-	$(BROWSER) ./report_html/test/test_report.html
+	py.test -v
 
 test-all: ## run tests on every Python version with tox
 	tox
