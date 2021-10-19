@@ -40,6 +40,4 @@ jobs:
     - name: Test with pytest
       run: |
        pytest
-    codecov:
-      token: 439fb69f-68b8-4302-9341-a9e7d596f68e
    
