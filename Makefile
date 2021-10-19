@@ -54,7 +54,7 @@ lint: ## check style with flake8
 	flake8 shenshang tests
 
 test: ## run tests quickly with the default Python
-	python -m pytest tests
+	python -m pytest tests/test_cli.py
 
 test-all: ## run tests on every Python version with tox
 	tox
