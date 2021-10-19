@@ -28,6 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements_dev.txt
+        pip install click, numpy, scipy, pandas, matplotlib, joblib
 #    - name: Lint with flake8
 #      run: |
 #        make lint
