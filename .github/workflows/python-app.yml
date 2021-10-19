@@ -40,8 +40,7 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
       with:
-        token: 439fb69f-68b8-4302-9341-a9e7d596f68e
-        directory: ./coverage/reports/
+        token: ${{secrets.CODECOV_TOKEN}}
         env_vars: ${{ matrix.os }},${{ matrix.python-version }}
         fail_ci_if_error: true
         files: ./coverage.xml
