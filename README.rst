@@ -17,7 +17,7 @@ shenshang
      :target: https://pyup.io/repos/github/RNAer/shenshang/
      :alt: Updates
 .. image:: https://codecov.io/gh/CNwangbin/shenshang1/branch/master/graph/badge.svg?token=srMW330c9a
-:target: https://codecov.io/gh/CNwangbin/shenshang1
+     :target: https://codecov.io/gh/CNwangbin/shenshang1
 
 
 
