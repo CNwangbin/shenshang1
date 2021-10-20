@@ -55,7 +55,7 @@ lint: ## check style with flake8
 
 test: ## run tests quickly with the default Python
 	#python -m pytest tests/test_cli.
-	pytest -v tests/ --cov=shenshang/ --cov-report xml
+	py.test -v tests
 
 test-all: ## run tests on every Python version with tox
 	tox
