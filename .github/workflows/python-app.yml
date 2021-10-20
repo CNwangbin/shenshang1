@@ -40,12 +40,16 @@ jobs:
       run: |
         make coverage
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v2
-      with:
-        token: ${{secrets.CODECOV_TOKEN}}
-        env_vars: ${{ matrix.os }},${{ matrix.python-version }}
-        fail_ci_if_error: false
-        files: ./coverage.xml
+      run: |
+          codecov
+      env:
+        super_secret: ${{secrets.CODECOV_TOKEN}}
+#      uses: codecov/codecov-action@v2
+#      with:
+#        token: ${{secrets.CODECOV_TOKEN}}
+#        env_vars: ${{ matrix.os }},${{ matrix.python-version }}
+#        fail_ci_if_error: false
+#        files: ./coverage.xml
 #        flags: unittests
 #        name: codecov-umbrella
 #        path_to_write_report: ./coverage/codecov_report.txt
