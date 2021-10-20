@@ -41,9 +41,9 @@ jobs:
         make coverage
     - name: Upload coverage to Codecov
       run: |
-          codecov
+        codecov
       env:
-        super_secret: ${{secrets.CODECOV_TOKEN}}
+        super_secret: ${{ secrets.CODECOV_TOKEN }}
 #      uses: codecov/codecov-action@v2
 #      with:
 #        token: ${{secrets.CODECOV_TOKEN}}
