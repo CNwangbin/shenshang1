@@ -60,8 +60,9 @@ test: ## run tests quickly with the default Python
 test-all: ## run tests on every Python version with tox
 	tox
 
+COV_FILES=shenshang.__init__ shenshang.cli shenshang.cooccur shenshang.simulate shenshang.util shenshang.visualize
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source shenshang
+	coverage run --source shenshang -m $(COV_FILES)
 	coverage report -m
 	coverage xml
 	coverage html
