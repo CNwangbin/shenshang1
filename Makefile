@@ -61,7 +61,7 @@ test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source shenshang -m shenshang.cli
+	coverage run --source shenshang
 	coverage report -m
 	coverage xml
 	coverage html
