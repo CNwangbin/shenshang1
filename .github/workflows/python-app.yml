@@ -46,8 +46,8 @@ jobs:
         env_vars: ${{ matrix.os }},${{ matrix.python-version }}
         fail_ci_if_error: true
         files: ./coverage.xml
-        flags: unittests
-        name: codecov-umbrella
-        path_to_write_report: ./coverage/codecov_report.txt
-        verbose: true
+#        flags: unittests
+#        name: codecov-umbrella
+#        path_to_write_report: ./coverage/codecov_report.txt
+#        verbose: true
 
